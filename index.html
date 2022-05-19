@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>.: KTBF :. Principle DX Presentation Basics in 9 Seconds!</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a4a6877b-0ce7-4676-92a2-edce714723bb" class="page sans"><header><h1 class="page-title">.: KTBF :. Principle DX Presentation Basics in 9 Seconds!</h1></header><div class="page-body"><p id="9f97adce-b1d3-4f2a-bb01-5969536adc30" class="">This is a brutally simple #<strong>KTBF</strong> (keep the basics fresh) principle 101 guide, no fluff all buff, that anyone (with a Mac) can apply in everyday design, development or daily practice of presenting your work.</p><p id="2d6c7095-3cbe-46ae-beb4-bdae69d62f80" class="">It’s also a reminder to myself, <a href="http://justgu.us">justgu.us</a>, to <a href="http://followgu.us">followgu.us</a>’s advice myself, so no one else ever has to <a href="http://askgu.us">askgu.us</a>; how do you do X? </p><p id="036a6b16-bf1c-4dab-b634-e82318d04164" class="">Like the good old Talmud, it should be a companion to the path of enlightenment you seek. A book written by many before you, and have withstood the teeth &amp; tongues of times.</p><p id="f13015df-3506-4b20-bb2b-1a4da0a1afbe" class="">But no fluff, all buff. A tradition in “dutch hospitality” that is about finding your own way, first.</p><p id="0ad86e6f-c113-4c88-8efe-e3e38d822af5" class="">Then I want to hear what you’ve been up to, so you can show me the axiomas you’ve found.</p><p id="5fcecf5d-7123-4607-bd29-adc14a6f02c0" class="">There’s no catch to my professional advice here and only one catch; </p><p id="df974a2b-6057-4011-bd82-20a754159846" class="">to think like Nike and “<em>Just do It</em>”. </p><p id="895592f0-9ebe-4126-9650-8385d9b6974d" class="">Why? Science; because it takes <strong>less than three seconds</strong> to do each, which negates any discussion in a timely manner.</p><p id="a8eda409-f99f-41b0-a027-222d311a6ed3" class="">And if so, convince me of a better way in 9 seconds, the same time I use, <em>Now</em>...</p><p id="7d92ad15-c376-4fa0-863d-fe4ddf83c20a" class="">See? I lose, you win if you keep reading on for about 7 minutes, reduces to 3x3 seconds of science to start learning in 2022, that will hopefully last you a life-time. </p><p id="cf9bcf1d-d4ac-45d0-8795-5059acb64d25" class="">Amen to <em>every day science</em> that takes <strong>three seconds tops</strong>, and costs nothing. Very Dutch.</p><h1 id="6d1f6561-9e9a-40f9-abd0-9da503fec5b7" class="">1: Turn up your Light 100%</h1><p id="1101bcb3-15a1-4225-8fe5-ab966de1f907" class="">Practice, don’t preach. Keep the basics fresh so that you can leave a headless body of work, without too many words, without the need for any more words.</p><p id="0ae4153c-6d1f-4e1d-a83b-7b4a94c8016d" class="">When you present things on a screen that have to do with colors, like pretty much anything, or just black &amp; white; know your minotor-unions. </p><p id="75ac4003-976a-4cc8-a0ee-0553effa062c" class="">Color-profiles manage your monitor’s look, and they differ per application. They don’t make your designs look good on any monitor with profile X.</p><p id="d5d57e16-e073-47d5-b6e7-1b9746c15273" class="">Especially for designers that present to others; they have that problem collectively, so make them aware; everybody has their own screen now. It will save you a ton of DX frustration on decission-making if you figure out early on who’s got what kind of hardware and profile.</p><div id="c3f93902-45cc-4aed-a403-29d35ad07178" class="column-list"><div id="caf1aabc-a50b-42fb-8824-f9bf6c8ef93b" style="width:50%" class="column"><figure id="8a5250fb-25e2-4731-bacd-3a6f79c8368e" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/brightness.png"><img style="width:958px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/brightness.png"/></a></figure></div><div id="19f15df9-3558-45eb-83c2-3393eac4d711" style="width:50%" class="column"><p id="b93f88ad-5abc-4659-82a2-288eb090da48" class="">Every screen will presents it’s full gamma at full brightness, meaning that if you want to show off your “true colors”, like factually correct, then turn on your monitors brightness to 100%.</p><p id="a9af40f1-0585-4ba0-b8e1-8a8cc9b2522f" class="">This doesn’t mean your screen shows true colors, your minotor’s manufacturere took care of that. Apple does a fine job at color-calibrating their minotors, and they last too. </p><p id="118971a3-5af8-4006-bd07-b2f7c6c0707e" class="">That’s why my advice on that level of principle presentation is simply use an Apple product; the 1st gen iPad was the first to ship with an actual color-calibrated monitor. They know their unions on color-callibration.</p></div></div><p id="73aa0178-1901-47fb-ba1a-e0388c21da98" class="">Especially on a Mac, or iPhone or iPad, turn on your brightness to full 100% when you present art-work to make sure you see the actual technical design and coloring, B&amp;W too, in it’s natural color-spectrum that is technically possible. Everything else is a user-preference on <em>their side</em>.</p><p id="32442ba8-bb12-45c9-992f-a337ae77ded2" class="">Ps, for those who are thinking “what’s he talking about, their side?”... Just wait for the 4th tip at the very end...</p><p id="6e04af56-7152-42cb-a515-e4ae3b0e06a4" class="">Your eyes and brain will adapt faster than you think, but your device now shows the full science and spectrum of what it actually looks like. That will be persistent, your eyes adaption then follow suit and see full spectrum. Including any cognitive biases that can now be specced, too.</p><p id="676e9a61-f75f-47fc-96a7-f89b2ccdff7f" class="">But don’t look into the light for too long, eyestrain is a result of oversaturation of the eye’s sensors. Especially on large monitors, like my iMac 27” it will burn your eyes. Stay safe.</p><p id="1c1af584-4771-44a8-a55d-909c77526fc6" class=""><strong>BONUS: </strong>SIP-app actually shows you this warning on their iPhone companion-app, which I use for capturing real-life palettes as inspiration. It works much like Adobe’s Kuler, but free without to have an account. </p><p id="cea3f0bc-522c-4ff7-8c45-4d34e7d7160e" class="">FYI; you don’t even need to have their app, or a Mac, to use it; just capture a palette, press share, and send it to your email.</p><p id="069e811d-7e89-4237-8794-9aa3a4d9e02d" class="">Brightness is just a user-setting, not a specification, that doesn’t take any accessiblities into account from a technical point of view. Your eyes will be color-blind tbw, by the fact of the unions.</p><p id="cb04b108-4a99-4e7c-a3c6-bc88cc739e9d" class="">Everything else then becomes “their opinion”, not your mistake to not “make it pop”</p><h1 id="e982a87c-13c5-4e87-a55b-78539116bd67" class="">2: Hide your Dock (CMD+ALT+D)</h1><p id="6674ca90-a14d-4961-94ae-8947a21c4441" class="">If you are going to show off a design and want to make sure all your artwork gets the attention it deserves, without some app-icons drawing away the attention to “what apps are you using?...”.</p><figure id="90e72b1d-7ff2-475a-be27-4638c8081007" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_0045.jpg"><img style="width:4032px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_0045.jpg"/></a><figcaption>Car with a cluttered dashboard full of paper, resembling our everyday habits of gathering contextual information that we need ready all the time. But like a car, it’s mostly parked doing nothing...</figcaption></figure><p id="9dbfd9e7-5fc4-429a-b35d-a079f8e0f876" class="">Hiding your Mac’s dock is essential to not distract anyone from your presentation’s content, into the outer perifery where all those colors are literally a <em>cognitive candy-store</em>, desperately wanting to grab your focus. </p><p id="7d47e67f-a5ba-4699-b961-75d50c596caa" class="">A dashboard in the true-est sense, for your eyes to dash on when you need to. Not sitting there like a parked car being pretty; it’s taking up <em><strong>screen real estate</strong></em> AND clutter “my dashboard”.</p><div id="43875f2e-90cb-420c-bd3f-49da6db46f12" class="column-list"><div id="6bcc0ed3-358d-4cb8-bea9-956ceb42c6b8" style="width:41.666666666666664%" class="column"><p id="9ec29246-4ccc-4477-ad70-45796f624ca4" class="">Great icon-design <strong>turns against you</strong> in your own profession. </p><p id="be1b2952-062d-4031-8993-8ae0c70022d1" class="">Your dock is just another set of personal preferences nobody is going to be interested in, <em>yet they do</em> when they see them, so get rid of them. </p><p id="7a9a85e9-7a3c-4b64-b133-e52b3bd163b6" class="">They will only distract from the focus and message you wanted them to focus on itfp.</p><p id="1063b01d-33f7-428d-a119-47bfb69b549e" class="">It’s not all bad at all, it’s perfect imcompleteness theorum and a use-case of why designers need to know their own unions when showing their own design work, and not somebody elses.</p><p id="7e623920-de33-4d33-a2e5-c95abb77024b" class="">Deliberate <em>or not</em>, if the receiving end is not aware of such cognitive load &amp; issues, they will be aware when they see them. </p><p id="ad01c28c-af94-40e0-b042-d752d6c1994c" class="">Don’t hide your mistakes, preventing them from happening is good enough too. If not better.</p></div><div id="32f2817e-37f1-4b3d-bf3b-735f82627b70" style="width:8.333333333333332%" class="column"><figure id="30bc31af-8333-4da7-a9f4-dcb3a760f587" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled.png"><img style="width:60px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled.png"/></a></figure></div><div id="8f8c02e4-dbf7-468a-bee0-705f7d0ebfa0" style="width:50.000000000000014%" class="column"><p id="06f7f563-d670-48d4-b146-e06222cc6dfe" class="">So if you meet a person who ask “why do you need me to put away MY dock?!” </p><p id="611ed9e6-a44f-4e4a-aff2-6a8ce39822d8" class="">“it’s not your designs I’m seeing tbw, it’s distraction from what I need to see... 🤨 “ </p><p id="41a12543-ecce-416b-b379-94b242389ec0" class="">(and then wait for “the face”...) </p><p id="7c5dd911-03bb-43a1-a9f6-cfb6d9eebe73" class="">No seriously, get it out of sight, and just hit <strong>ALT+CMD+D</strong> (Dock) to show/hide it automatically. </p><p id="79ae07e5-80de-434b-abf8-e2d17f49e189" class="">In 3 secs, instantly visual clarity of content by removing all those subliminal distractions of the eye.</p><p id="71a065d2-70de-46f3-98ed-8fcb6feff232" class="">But don’t be that <strong>chauffeur</strong> that is biased by my wisdom; people are people and the bullying and the bitching can be undone in 3 seconds too; just think like Nike and “Just Be Human”.</p></div></div><h2 id="71da2047-7d2a-4e0b-8713-e6d82022dfc2" class="">Manual Override</h2><p id="ef26665b-4a9e-45f3-bc95-e63d63f59376" class="">If you need to do it on a Mac by hand: System Preferences &gt;&gt; Dock &gt;&gt; check/uncheck “Automatically show.... Dock”</p><figure id="d4fd2589-d55c-4b81-8d46-c2fb974498cf" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%201.png"><img style="width:670px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%201.png"/></a></figure><h2 id="6ecb80bc-b063-4604-b837-91471e3d67de" class="">Too many bars, need a Snicker? Better?</h2><p id="06dbd7f6-3261-4937-a2db-232a9e3180a4" class="">You can do the same for the <em><span style="border-bottom:0.05em solid">Menu-bar </span></em>on top if you really want to take use of the full screen real-estate you have. This can be done with the hotkey <strong>CTRL + F8</strong>, and if you have an Apple Keyboard with the ‘fn’-key, you need to add that to the mix (<strong>CTRL + FN + F8)</strong> since the standard keyboard setting in OSX is to <em>not use the (f)unctio(n)-keys as fn-keys</em>, but as media-keys (like play/pause).</p><p id="2db5a641-82aa-42c6-8fd3-08571ee19b90" class="">In short; those fn-keys on the top of a Windows-keyboard are not default in MacOS, and that’s exactly how most people like it; as media keys. Because how often do you use CTRL + F2? or F3? or F5? Or the functionality of accessibility by going all keyboard-navigation tbw? </p><p id="fcbbb4f5-85a4-499d-9836-9b8f7bef4b14" class="">Hotkeys sound nice, but for some of us they are a necessity; how else do you ‘see’ what you can ‘do’? Think about that for a second, because in less than three seconds it’s already gone ;)</p><div id="a5c9658a-ec4e-42d8-9374-9447b9c4d8d3" class="column-list"><div id="19795944-c668-4096-8807-0a00ea5fa198" style="width:62.5%" class="column"><figure id="9286b4ef-9a8c-4680-a067-3576386fc849" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%202.png"><img style="width:288px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%202.png"/></a></figure></div><div id="9e40efb4-a1cd-4a66-834a-e8c432f4b215" style="width:37.49999999999999%" class="column"><p id="3c74e0a6-d7d0-46c3-b429-02a22c613429" class="">Espcially on a laptop or Macbook, the extra space you get really gives a lot of breathing space for the reader to read the right information.</p><p id="66eed0ed-2cae-4a4c-b3b7-296e60d68792" class="">This needs to be done from preferences; go to General &gt;&gt; check/uncheck “Automatically hide.... menu bar”.</p><p id="fc9c7b23-85e8-4c26-9e30-b8610d1d93e0" class=""><strong>BONUS</strong>: want to learn the <em>hotkeys</em> of your favorite apps and need that extra push? Just turn of the menu bar’s visibility tbw, then wait; you’ll be <em>forced to not look</em> at the menu or using it tbw, only when you <em>need to.</em></p></div></div><h1 id="f7a67e1b-fb38-40ad-a456-c8d302ac62a6" class="">3: Hide your Desktop Icons (Terminal)</h1><p id="6c6d3184-09b9-4185-b384-b98de60101a9" class="">It’s fairly unknown that you can do this but you can actually hide all your icons on your (Mac) desktop if you have trouble organizing this “garbage folder” to begin with. It’s just that, a <a href="https://recoverit.wondershare.com/mac-tips/hide-desktop-icon-mac.html">visualized folder</a>...</p><figure id="55178167-642f-4e2d-9c4f-907b2180d2c9" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%203.png"><img style="width:2560px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%203.png"/></a></figure><p id="3d20f138-9352-47ed-beff-c8004316731b" class="">It’s quite easy to hide/unhide; open Terminal, and enter the following;</p><pre id="2e83db65-d9ce-40fe-8462-665ea14b0426" class="code"><code>defaults write com.apple.finder CreateDesktop -bool false</code></pre><p id="ba1a895b-652e-4cde-9a21-e896e33119b1" class="">This will turn the flag to ‘false’ so to switch back, press the Up arrow-key to cycle through Terminal’s clipboard (it remembers), and change it to ‘<em><span style="border-bottom:0.05em solid">true</span></em>’ to switch back.</p><p id="84c74f89-6471-4c95-9b39-d1578f766c90" class="">Rebooting often solves the problem. You need to find and kill an app and revive it for it to take effect. ‘killall’ Works on any app btw, in case it hangs and doesn’t like to respond. Your desktop is part of Finder, so reboot it for the flag to take effect;</p><pre id="ee0bc1dd-442c-474e-8d70-fbc9c1ce7014" class="code"><code>killall Finder</code></pre><p id="937a081b-8a00-4637-b424-3af4bbcc1325" class="">Now look at your clean desktop and feel the “sigh of visual space”. Too bad the ugly Dock is still there and the menubar, but it looks clean and ready for sure.</p><figure id="d03997e4-5940-4782-9906-713e791e9062" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%204.png"><img style="width:2560px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%204.png"/></a></figure><p id="fa743c79-1f84-4185-b9ed-481a1c4b8339" class="">“Why hide them for others? I don’t mind actually” I hear you say. Well;</p><p id="8db0cf71-c5bf-4903-a816-fb6572c3e828" class="">Distractions! Too many points of <strong>useless information</strong> to focus on that is completely out of context with your primary content, yet they take pole position in your viewers perception. </p><p id="0e6773db-d8cb-4964-8228-db50aabfd58b" class="">Nobody wants to focus on your folders, or the vague names you gave to things you want to keep “organized”, <em><span style="border-bottom:0.05em solid">but they will</span></em> because it has a prodominant place in their visual space and will pass their cognition for processing that mess. Even if it’s just judgement... </p><p id="f7412503-c799-4846-aea0-6109cb10ed1f" class="">A messy desktop screams information overload, which is why most people don’t look at it at all. It’s too messy! So they just use an app to literally cover it up this folder, that works like any else in Finder tbw.</p><p id="f966b000-428e-406f-8ffc-28aad2cbd0b3" class="">I hate it on my desktop’s background, so I killed it like Nike.</p><p id="1a0f5c70-5837-4456-ba95-c62dd4956ed2" class=""><strong>BONUS:</strong> did you notice the grey-blue shaded standard background I used? That’s on purpose so all other colors come out on top, especially when you remove them; a desktop background for what it should do; be the <strong>groundpaint</strong> for everything else to be painted on. Grey is good!</p><figure id="a3c8768e-5cb0-4758-bc34-dddfea0d8549" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%205.png"><img style="width:2560px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%205.png"/></a><figcaption>Not an image, this is an actual screenshot of my Desktop. Without any distractions, just an image.</figcaption></figure><p id="94800552-a119-4b08-83c6-5a67e60dd42d" class="">Or did you first paint your house hell-red and then snow-white? No, you used groundpaint most likely, grey-ish. A fresh base-line for any color, white and black <em>especially. </em></p><p id="1ce723e2-e420-4a37-8aef-2def14df3bcf" class="">Yes, they are colors, not skins to slap onto anything you like, so use with caution and context. Period. </p><p id="bee56987-3a17-4d47-869e-0648168c7fc8" class="">Yet the opposite <strong>is also true</strong>; use a full-blown poster as a background to <strong>represent your brand and visual identity </strong>front and center so your audience gets a nice brand warm-up for what’s about to come.</p><figure id="65e2f12a-fa74-4548-8015-399899cad9d9" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%206.png"><img style="width:2560px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%206.png"/></a><figcaption>My desktop background with a branded background for setting the mood for a brand presentation.</figcaption></figure><p id="5fd89d14-e439-41be-b332-a6520013bd9e" class="">It’s about presentation, not seperation &amp; segregation. So keep the basics fresh, use your colors wisely, and kilall opinions that oppose your work from the basics. </p><p id="0cbc5eb6-33bd-47a4-8516-dec303944484" class="">Sane defaults never die, and in three times three seconds you go at light-speed without distraction. Anyday, <em>every day</em>.</p><p id="8800bf1e-05e1-4c08-a29c-81ec16fa487d" class="">Your future self will thank yourself for all the complements you get when you show people how to show people how to show people; by repetition of keeping the basics fresh, and Just Doing It like Nike. </p><p id="521fca61-5c96-400d-bcfd-e62880def28d" class="">Straight-forward Dutch Do-Dillegence, no fluff all buff, ready with a clean canvas to draw on. </p><p id="bcf859a5-c9a9-46f2-b775-a9054b2cd478" class="">Now you can make sure that your Dock and Menubar don’t use any of the visual information space, so you have a kind of “inbox zero” feeling that makes sure you have your peace of mind. For me it works great too, as I like as little things on the screen as possible. Clean &amp; minimal.</p><figure id="8ab468ba-b6c7-4278-8235-f4f29bdf602a" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%207.png"><img style="width:2560px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%207.png"/></a><figcaption>Screenshot of my desktop view without showing the Dock and the Menubar, just an app running in the center of the screen that has all the attention happening inside of it. Not outside!</figcaption></figure><h1 id="393ccc18-28a3-4678-93aa-7bcc2b6d5626" class="">BONUS: Cafeïne</h1><p id="efdddb44-d338-438c-b9dd-bfe13bbb9cad" class="">So now that most of you are looking at other people’s screen, and not doing anything on yours, some of you might have the trouble of having their monitors go to sleep, or even their entire computer while they are working. Your idle, watching.</p><p id="46768984-ea88-4d87-b15e-d9d8d75b2d7b" class=""><a href="https://caffeine.softonic.nl/mac">Cafeïne</a> is an app I’ve been using for as long as I can remember and it does one thing very well; keep your Mac out of sleep-mode when you need to, hence the app’s name. </p><p id="ac1eb196-6bbc-44c6-bc14-4d056d927d51" class="">There’ also an alternative that does the same thing if you want/need, but I haven’t tried it, called <a href="https://apps.apple.com/nl/app/amphetamine/id937984704?mt=12">Amphetamine</a> on the Appstore. Cafeine is good enough for me; Nike-quality. Just does it.</p><figure id="05959854-53bb-49ae-8e5d-f4ef135ff664" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%208.png"><img style="width:535px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%208.png"/></a></figure><p id="f889c58d-c51f-4994-b433-f01bbcd75e5f" class="">Why? Well when you present, your monitor’s output is wired to another to show output. Even if you’re doing it online, it’s software that shows the output. </p><p id="eb0777b8-0e85-4109-9155-aa2d5ea65071" class="">If you would present in front of an audience IRL, and the screen goes dark, you think it will just turn on. But now AirPlay lost it’s connection, so you’ll have to restart “plugging” the screen again.</p><p id="d1e54887-72b5-44d4-8a01-886063eb37b0" class="">It doesn’t make for a pretty picture to begin with and can swing you right out of that momentum you had going when giving a good talk about what you made. Besided the technical issues.</p><p id="b4a83dea-8bb5-4000-a6fd-30b85ceb1b9a" class="">Online it can make sure you have to re-enter a online call because your camera is not connected anymore if your computer goes to sleep. This is really ugly when you’re the host, because you have to leave to re-enter, meaning everyone else too.</p><p id="a0dfdb78-b9f4-4bd5-8fcf-b21466fe0c5e" class="">That’s not a problem if you’re waiting for people, but all these issues and conversations can simply be solved with a click of a button; just make sure your screen is <strong>always awake</strong> when presenting. Like Nike, running.</p><h2 id="5f88a822-6f72-44dd-946f-a3817a4f6843" class="">The Social Monitor Dilemma: Working from Home</h2><p id="a82c2ff8-0bca-46fb-97b2-df618fe7f43f" class="">In the old days, you would look at the same monitor. But now you share your screen, your desktop, your “shared workspace” because it shifted online. Bye bye physical space that makes us see all things equally.</p><p id="e5b62f52-c6bd-4a7e-962f-a6ffe2dfcd3a" class="">Did anyone notice that the monitors that you are presenting on are for YOU, EVERY DAY! Yet most people just care about their filter and their background image?... I mean, keep the basics fresh! Just don’t do this;</p><p id="306e2eb9-e877-4c6f-b16c-7201f4944d3d" class="">It’s not a joke, it’s real the way I see it; I can be on a color-callibrated iMac, they’re on a 10yo LCD burned to the crisp, and then you say;</p><figure id="8a7e5347-235d-4597-afac-d6482d12c8b9" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/images.jpg"><img style="width:432px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/images.jpg"/></a></figure><p id="cee9078c-fa68-4ca8-ab68-d7680c4df761" class="">“Please, can you make it POP a bit more? It doesn’t look “right” yet...”</p><p id="eae54e75-e3a3-445b-a08d-11db7f297a1a" class="">Now without knowing your monitor’s specs, I look back at my bright and beautifull iMac and think “...MORE color!?!”.... You “see”? </p><p id="410b3a42-3e82-4ed0-93b7-3d8410ca6a85" class="">Now think hard and tell me that what I just described happened right in between, right under your nose, every day... </p><p id="3738de7c-b1bc-4383-a06b-714869d0d18e" class="">Wellcome to the “social minotor dilemma” where everyone sees something different by specification of their monitor because of being in isolation, and you get the picture; multiple specs &amp; distractions.</p><p id="0589bd5e-05c7-4f46-b05f-9d3b5cd26b0e" class="">No app detects &amp; changes that automagically to my knowledge, at best a warning most people click away because they don’t see the importance of a color-profile. </p><p id="f1e85de5-6a8e-4779-8196-939cc226fb1d" class="">Perfect inception; nobody notices it while sleeping because you don’t look with your eyes. You look with your brain that doesn’t know. And that’s without even taking any “disabilities” into account and calculation of how hard this problem is to detect IRL.</p><h2 id="4087d2c4-3384-4dfd-b536-185cd24450a6" class="">Before bedtime; Caffeïne</h2><p id="c4940d9a-b79b-4c37-b1d4-9a1f4b494e72" class="">Since two years people have not noticed but in the office, we all had a <strong>centralized screen &amp; space</strong> to see work on and in. Exact conditions regardless if imperfect, you would all see the same.</p><p id="3de7394a-99c9-4146-af04-bea329233d47" class="">That is no more, we all have our conditional lighting, screens and above all personal preferences that we share with others. Messy conditions regardless of perfect, you all see somthing <strong>different</strong>.</p><p id="2c1345db-646d-423b-89ab-dc81e3a65c61" class="">Just like with the social dilemma; we all read and interpret our visual information through a “shared workspace” that is literally your worldview of it, <em>every day</em>.</p><p id="c468a448-0810-4171-9586-75790a7bf422" class="">Did you not notice?... me too but stay calm; it’s there and it needs to be taken care of if we wish to have the right insight &amp; acceptance from first principles of presentation by technical negation. </p><p id="9572f827-3e8d-4f1e-bfc7-23c4811b092c" class="">Wake up, think like Nike and “Just Do It”; send <a href="https://www.notion.so/KTBF-Principle-DX-Presentation-Basics-in-9-Seconds-a4a6877b0ce7467692a2edce714723bb">them a link to this article</a>; there’s at least three other good tips they can take home if they don’t need “doomsday thinking”. </p><p id="6c63e5e0-8045-4d94-ac5b-3498e058c126" class="">It’s not doom, it’s there. Every day, by absence of what used to be.</p><p id="d6b5ad48-f59f-44b2-a1a2-8799da5955c8" class="">Nowadays you don’t have that technical IT guy at your side anymore... But did you notice the difference in monitors you had or have, or even <strong>know this to begin with?</strong> </p><h2 id="694d2529-ec2f-4c71-b044-486c449d0028" class="">Accessibility 3.0: Insight &amp; Acceptance </h2><p id="13e66219-364f-49ad-9284-0f37ec8c3ff2" class="">Scary! Isn’t it? But that’s the truth; we see with our brains right? </p><p id="3c048e0f-f774-44be-93de-3a0486004c13" class="">Well then we must fix it on that level and stop wasting any time on figuring out how our monitors are specced, and what to do <strong>first: Insight &amp; Acceptence</strong>. </p><p id="bac4bf62-d9b6-4578-87b5-54de6a316494" class="">We can’t fix accessibility because we don’t even know what to look for anymore ourselves. </p><p id="8fa8012a-3fa7-431b-98c0-02ed03675c53" class="">Too many problems by negated relativity, meaning expertise is most likely the only way to really know. Automation to only known to fix it. But to my knowledge, it’s insight &amp; acceptance first.</p><p id="2d1e381e-4430-44a9-91f3-1ed1a5e167e4" class="">Telling people they have a problem and not fixing it is the modern way of being your own “WC-eend authority”, but that’s really so 2021; describing the fear and the enemy we see, but just like the “breaking news” only try to “cover the story”. Present the opening of your OWN STORY!</p><figure id="3d6ed796-f51c-4664-bb8c-b3af518b38b5" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%209.png"><img style="width:671px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/Untitled%209.png"/></a></figure><p id="c918df5a-c047-4d2b-b60a-01e23b86d16f" class="">Meaning, Do This;</p><ul id="d25cce0f-98a6-44fa-a026-345ad6d1a18d" class="bulleted-list"><li style="list-style-type:disc">Check your (2nd) minotors color-profile in Display Preferenced &gt;&gt; Color, check “Show profiles... only”, take a screenshot.</li></ul><ul id="9418cf5b-6adc-415e-9855-383c96219048" class="bulleted-list"><li style="list-style-type:disc">Post the screenshot in a group-chat at work, ask everyone to “Just do It Too”, collect the evidence as non-conformist as possible</li></ul><ul id="cc3096fe-60a2-40d1-9cd2-572952dfb610" class="bulleted-list"><li style="list-style-type:disc">Send them a link to this article so you don’t have to explain why to “Just Do It”, and just watch those 10x Google dev’s faces go 😰</li></ul><ul id="565af0b8-9e3f-41ce-8df3-b44550fac7ab" class="bulleted-list"><li style="list-style-type:disc">Ask if people at work have any cognitive biases that may effect their everyday work, and make sure you collect that <em>personal information ananymously</em></li></ul><ul id="622de234-bbe6-4d54-87f6-0395aff2c54f" class="bulleted-list"><li style="list-style-type:disc">Done, insight established. Await their acceptance just like you did, negate the ones who question with “why?”, because the fact they deny shows their why starts with fear first.</li></ul><p id="4215c753-bb52-4939-8ec3-74e6cdb9665f" class=""><strong>BONUS: </strong>In the mean-time, you can check your monitor’s color-profiling by laws of a golden standard; Pantone’s Hue. Why? Because LCD burns up to a degree, so you might need to equalize and callibrate your monitor at a certain age. </p><div id="0dc9194d-c0df-4ff9-9ff8-c20c105fa231" class="column-list"><div id="968228e3-daf2-4889-be22-ce224f851469" style="width:50%" class="column"><figure id="9f7e5cde-16a6-4fb6-9b55-5fa94f1764f4" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1103.jpg"><img style="width:3264px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1103.jpg"/></a></figure></div><div id="2480d872-bc27-4378-a0cb-6951df2959e1" style="width:50%" class="column"><figure id="dedd7a9e-b7c8-4736-802e-1f4fd8425f5f" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1104.jpg"><img style="width:3264px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1104.jpg"/></a></figure></div></div><div id="4fee86ea-4d6d-4702-930f-cd398501293d" class="column-list"><div id="06d0ee44-8eab-4738-b3da-a37b325e7c54" style="width:50%" class="column"><figure id="a13cd348-4b49-486b-b8b2-77ecaaab3351" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1105.jpg"><img style="width:3264px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1105.jpg"/></a><figcaption>Pantone Heuy Pro color-calibrator checking an iMac monitor on it’s blue color spectrum and performance using an LCD-sensor.</figcaption></figure></div><div id="afe4089c-1ef9-40c7-a0ea-ee044ad12ed8" style="width:50%" class="column"><figure id="a784f646-48f6-4e1c-afd2-6cc5ab952abb" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1106.jpg"><img style="width:3264px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_1106.jpg"/></a><figcaption>The use of a color-callibration does not guarantee a color-perfect result. It depends on the technology of the monitor and sensor, which in this case is both LCD.</figcaption></figure></div></div><p id="38b275b5-9bb7-4707-b7e3-549d93ff98c0" class="">Mind you that this is not nessecary for most modern screens you buy, it’s not the end of the world if you don’t have such a device lying around. </p><p id="112dcd8a-dde3-495b-b83c-a2c834aee61c" class="">But it’s quite noticable when you go from a day to day office and work on different monitors all the time. You might want to be prepared, and I am just in case.</p><p id="be83d7fa-fda1-4eb2-a5cc-292e13bef594" class="">Your iMac already has a color-graded profile, but it’s just that; a list of properties &amp; values to pass along. In short; it doesn’t update itself like an app. </p><p id="41da034c-fed8-47dc-8bfb-10bc5b16baac" class="">It’s an LUT, a file with a look-up table. Just sitting there.</p><p id="8feff993-b824-4c7f-a929-d07fad1a57cf" class="">Pantone’s Hue <em>doesn’t work well</em> on iMac monitors though since they already are callibrated, but does work well on any 3rd party LCD that has no color-grading. Mind you, LCD. Not LED.</p><p id="c5d10d3f-b769-4ad0-b741-c6482a426e95" class="">So don’t just slap on a color-grading device and expect it to work out of the box, just like you shouldn’t expect your monitor to be color-profiled out of the box. It’s the “PASSED” you want.</p><h2 id="127234dd-535a-4d92-896f-0c721fe5684b" class="">And then?...</h2><p id="3b2ace1a-5d54-465e-ae5b-ee8252a99ab9" class="">Don’t worry if people don’t follow up to your form. They never do to anything that requires inertia, they expect to be served. Well serve them a link to this article, I’m done too explaining people <em>every day</em>.</p><p id="7dbecbc5-d6e4-4d8a-a448-a55761f4ac8d" class="">If your one of the few people who did this; Wow, thank you for keeping your people’s sanity at top performance by having the right kind of hardware for professionals like me; your XP on seeing things through my lense.</p><p id="c714caf9-0c62-46f8-a962-f13f0cc0348c" class="">Costs a fortune, saves a ton every time; a good set of brains that knows what to look for because they are self-taught on how to make these things surface to a scale of over 9000. </p><p id="27a58762-7c9a-42d4-90d3-91045b7cb2a0" class="">By the power of one, two, three seconds x the amount of daily interactions x people === debt. Just as easily as technology scales around us, so do it’s problems; they are human-centered.</p><p id="19247091-a7e8-46a7-98b2-5e08492c150d" class="">No, hardware is not the issue. It’s inert effort from insight &amp; acceptance that we think all is good, all is well all the time. It’s not, and it’s ok. It works if you have the basics right, fresh &amp; ready.</p><h2 id="cf92b468-eaca-44b9-8b7a-dcaeb42143de" class="">Money Talks, dirty...</h2><p id="16e52881-21d2-4b11-94f9-a57e7ad449f2" class="">I have an iMac 2011 27” that costs about $300~$400 second hand these days. I bought a 2010 for €75,- before this one, and flipped it for double the value to buy the 2011 model I have now, that costed me €150,-. </p><p id="8f229ae0-ffcd-4dfc-a2d2-4da921fef4ec" class="">The point is that 2nd hand doesn’t mean jack shit about quality, especially color-graded monitors that have a professional purpose. Mac or not, hardware is hardware and those old beauties have absolutely no stopping them!</p><p id="6984db95-b81e-4537-81f6-af75b8a5214c" class="">Just check your local Marktplaats to find a steal that somebody doesn’t want anymore, or like me post an add to ask for people to contact you to get rid of theirs. Works like a charm.</p><p id="2b0b26b3-8354-40bb-ab46-44d7a29512cd" class="">It runs High Sierra (OSX 10.3.6) professionally, no shame; it’s fully specced for the work I do, runs like a horse, color-graded to Pantone standards. Figma, Blender, VSCode, Three.js, Unity, etc.</p><p id="a0487519-fe03-460a-b878-82bc16ca25a6" class="">Costs nothing*, saves a ton of desingwork, with an old set of brains and a beautifull casing that just smiles at you all day. Every day, fresh &amp; ready.</p><p id="4e83f51f-d768-47bc-8d9f-7ece74e8aa89" class="">I found my donor iMac on the dirty streets and it supplies me with all the parts that I need to service my iMac better than the monolithical and almost criminal “Apple Care” you get these days when it breaks within 4yrs. </p><p id="ad5ffb69-5518-46c9-872c-7545dd7a8635" class="">That AppleCare alone can buy you a 2nd hand iMac, no joke. </p><p id="2d892343-ea74-486b-89f8-90ae483c3a65" class="">And that notch they introduced is probably a top-notch <em>every day</em> mistake; it completely requires it’s own screen-resolution, plus devides your UI by design. It doesn’t <em>solve every day</em> issues.</p><div id="3937af49-2846-450b-b69b-d14471b82fd4" class="column-list"><div id="d5fbb7a8-fa48-4451-b191-ea7f1b81b1a9" style="width:50%" class="column"><figure id="f3c54499-ecc6-4aef-ac52-6cc08d3c3268" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_0151.jpg"><img style="width:4032px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_0151.jpg"/></a><figcaption>My workshop at home; 27” iMac &amp; LCD-display</figcaption></figure></div><div id="59b9e93f-4935-463d-be64-3ce1c4376967" style="width:50%" class="column"><figure id="52be8d9e-cf5f-4ffc-bd00-9556d841ba7b" class="image"><a href="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_0055.jpg"><img style="width:4032px" src="KTBF%20Principle%20DX%20Presentation%20Basics%20in%209%20Seconds%208a5250fb25e24731bacd3a6f79c8368e/IMG_0055.jpg"/></a><figcaption>What’s behind a screen? Answer: a computer</figcaption></figure></div></div><p id="67051edb-b85b-4f5e-8d7d-b383465833a2" class="">I love the good old Mac, but never a new MacBook Pro ever again. I would rather have an M1 Mac Mini to take anywhere, and use on my 27” iMac monitor in display-mode when it dies one day. </p><p id="e301e0ac-64d8-4e82-8c85-834d1f604e80" class="">If it will at all so I can have both in the meantime, and soon I’m adding a new CPU, GPU &amp; RAM upgrade to make it run the latest version of OSX, for less than $200,-. Priceless quality and cheap since most people dump them for not knowing how to upgrade them!</p><p id="51a25992-950f-40ab-a07a-8a9e7f46eb62" class="">It’s almost like the promise of CSS; progressive enhancement &amp; gracefull decay for free. But you’ve got to do it yourself and let the browser handle the rest for you, and wait for old things to Just Die Off like Nike when CanIUse green-lits a feature-flag.</p><p id="c8414414-1ae0-4e72-9bb8-019dd47ed89f" class="">Nobody noticed this very basic, simple principle change in our daily professional lives and how we see things through monitors; by how we present things to ourselves is to others, and vice versa on our own monitors. </p><p id="d4cb2f81-3d82-4684-ba9f-a4996455bed9" class="">Every day, smelly &amp; dirty, working on it for some money.</p><p id="d9e31f31-5734-4734-a760-8d76907ba646" class="">New or old, it really doesn’t matter. Did you even know about this problem that we all have with monitor specs and how we observe our screens in the first place? </p><p id="df9831a3-2887-44b5-a2aa-e0661429af54" class="">That matters to me before any pixel-perfect, mobile-first, responsive, defensive argument you have to make about the fact I fixed it in three times three seconds, and this article took me a 1000x longer.</p><p id="9f1bbb85-1278-4cfd-ba4d-a69731eb085f" class="">That’s the essence of <strong>#KTBF</strong>; think like Nike and “Just do IT!”. Not just for others, for you especially in 2022 where we will see more and more workspace go decentralized. </p><p id="cd00d479-d45b-4f3c-b7b7-2ea40ceaf4e7" class="">Because if we spend more time presenting ourselves, we spend less time covering up our collective “debt” to keep a sane workspace regardless if we work from home. </p><h1 id="fcee106a-0e53-4870-9632-b5ad3d7e63b1" class="">The Nespresso-Principle; What Else?</h1><p id="188d1c28-ff37-4636-ae32-aebf141680f9" class="">Science doesn’t care if I’m a sinner or a saint. If I suck or rock at this; I need to simply practice, proof and then preach the basics, by thinking like Nike, and just proof it. Every day, again &amp; again.</p><p id="b28573d0-eee6-4342-8d28-a881fdff7c41" class="">If it fails, it will stop working by the mere law of de-doption; adoption’s counterpart when it starts to fail on you, and also others because you fail. And that relativity is negated, meaning nobody sees it. It just dies.</p><p id="3c74dcb7-c3b4-42f3-a476-4fdc06fccc73" class="">like I said; practice presentation in 2022, don’t preach. BS included because that’s how others learn too. From insight and acceptance, people will find the right intent to create their impact.</p><p id="2c8da466-9317-47f3-8b36-74ebf6246189" class="">Keep the basics fresh, and as S.A.D. as possible. I don’t need more than that, no less either since nobody’s got principles to begin with anymore. That’s why #KTBF is so important, and you never need to write them down. Just share them and keep the basics fresh every day.</p><p id="9e2363ac-7408-498c-bbf7-b8f2666d8a3b" class="">Because if not one first principle all for of you pretty Clooney’s that spend more time on checking if they look good on a Zoom-call, than <em>What Else</em>? What next? Bearded Beyoncé’s?</p><h1 id="c90e327d-36b1-4a79-a42b-052b2e3e52d0" class="">Ego te Absolvo</h1><p id="5757bc3a-d365-4c49-aab4-da2b3cfdee47" class="">I hope that you feel a bit of fear go away because the good fear needs to return for your brain to really focus and remember things, as long as you just fear the massive scale of unknowingness of it. </p><p id="d3ffff0d-4961-4cf8-9cca-301dc1b16fac" class="">You see with your brain, not your eyes. Colors especially, there are no “disabilities”, just screens of mind and “filters of view” that we need to take into account; our own working conditions especially don’t you think? </p><p id="846e5d98-4127-4692-ac32-c932f5a10533" class="">Not the ones that know and see things like me, with science and pragmatic spiritualism to Just Do It. They are not that may these days, and you probably don’t even know them, too...</p><p id="38be7bb8-6206-4955-9936-7b7f8cbe20ce" class="">We are <strong>the most affected by accessibility</strong>, not your customer. Every single day...</p><p id="6608e770-9eef-4be0-b981-68bff5201a25" class="">And if you still have questions; just <a href="http://askgu.us">askgu.us</a> ; a dutch design founder &amp; engineer who loves ruining problems by principle design, and who loves to innovate like Nike; Just Do It! <div class="indented"><blockquote id="3ca44d39-56ca-46a0-b8cd-db565293fc59" class="">To have a name is to exist,
+     but to have a name with an API is <a href="http://justgu.us">justgu.us</a> ...
+
+Questions? <a href="http://Askgu.us">Askgu.us</a> 
+Follow me? <a href="http://Followgu.us">Followgu.us</a> </blockquote></div></p><p id="fb969e9a-f3ae-4fc9-b1d6-bf7e10c1e8b6" class="">See all you have to do is to remember my name, Guus, and <strong>put a .dot</strong> between the squared u’s, plus something prepending that is applicable. Haters included, just don’t think “play” got it?</p></div></article></body></html>
